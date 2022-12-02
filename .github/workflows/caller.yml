@@ -39,5 +39,5 @@ jobs:
     uses: ./.github/workflows/reusable-workflow.yml
     with:
       config-path: .github/labeler.yml
-    secrets:
-      envPAT: ${{ secrets.envPAT }}
+      secrets: inherit
+
