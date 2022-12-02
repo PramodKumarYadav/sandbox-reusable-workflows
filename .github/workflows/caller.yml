@@ -40,4 +40,4 @@ jobs:
     with:
       config-path: .github/labeler.yml
     secrets:
-      token: ${{ secrets.envPAT }}
+      envPAT: ${{ secrets.envPAT }}
