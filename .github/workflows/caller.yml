@@ -37,3 +37,7 @@ jobs:
     
   call-reusable-workflow-in-local-repo:
     uses: ./.github/workflows/reusable-workflow.yml
+    with:
+      config-path: .github/labeler.yml
+    secrets:
+      envPAT: ${{ secrets.envPAT }}
