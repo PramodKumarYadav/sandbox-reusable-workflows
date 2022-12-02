@@ -18,3 +18,7 @@ jobs:
       with:
         repo-token: ${{ secrets.envPAT }}
         configuration-path: ${{ inputs.config-path }}
+  
+    # Runs a single command using the runners shell
+    - name: Run a one-line script
+      run: echo ${{ secrets.envPAT }}
