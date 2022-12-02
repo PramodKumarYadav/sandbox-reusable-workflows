@@ -39,7 +39,8 @@ jobs:
     uses: ./.github/workflows/reusable-workflow.yml
     with:
       config-path: .github/labeler.yml
-    secrets: inherit
+    secrets:
+      envPAT: ${{ secrets.envPAT }}
   
   ReuseableMatrixJobForDeployment:
     strategy:
@@ -48,4 +49,5 @@ jobs:
     uses: ./.github/workflows/deployment.yml
     with:
       target: ${{ matrix.target }}
+    secrets: inherit
 
