@@ -1,0 +1,19 @@
+name: Reusable deployments workflow
+
+on:
+  workflow_call:
+    inputs:
+      target:
+        required: true
+        type: string
+    secrets:
+      envPAT:
+        required: true
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+    # Runs a single command using the runners shell
+    - name: Run a one-line script
+      run: echo ${{ inputs.target }}
