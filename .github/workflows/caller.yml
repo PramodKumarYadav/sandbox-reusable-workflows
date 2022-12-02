@@ -40,4 +40,12 @@ jobs:
     with:
       config-path: .github/labeler.yml
     secrets: inherit
+  
+  ReuseableMatrixJobForDeployment:
+    strategy:
+      matrix:
+        target: [dev, stage, prod]
+    uses: ./.github/workflows/deployment.yml
+    with:
+      target: ${{ matrix.target }}
 
