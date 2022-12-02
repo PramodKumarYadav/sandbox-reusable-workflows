@@ -7,7 +7,7 @@ on:
         required: true
         type: string
     secrets:
-      token:
+      envPAT:
         required: true
 
 jobs:
@@ -16,5 +16,5 @@ jobs:
     steps:
     - uses: actions/labeler@v4
       with:
-        repo-token: ${{ secrets.token }}
+        repo-token: ${{ secrets.envPAT }}
         configuration-path: ${{ inputs.config-path }}
