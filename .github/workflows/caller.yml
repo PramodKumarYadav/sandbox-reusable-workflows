@@ -34,6 +34,14 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      
+      - name: Run on push to main
+        if: ${{ github.event_name == 'push' }}
+        run: echo triggered due to push on main!
+
+      - name: run on workflow dispatch
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: echo triggered due to manual trigger!
     
   call-reusable-workflow-in-local-repo:
     uses: ./.github/workflows/reusable-workflow.yml
