@@ -44,6 +44,7 @@ jobs:
         run: echo triggered due to manual trigger!
     
   call-reusable-workflow-in-local-repo:
+    if: ${{ github.event_name == 'push' }}
     uses: ./.github/workflows/reusable-workflow.yml
     with:
       config-path: .github/labeler.yml
@@ -51,6 +52,7 @@ jobs:
       envPAT: ${{ secrets.envPAT }}
   
   ReuseableMatrixJobForDeployment:
+    if: ${{ github.event_name == 'workflow_dispatch' }}
     strategy:
       matrix:
         target: [dev, stage, prod]
