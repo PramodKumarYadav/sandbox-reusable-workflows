@@ -53,6 +53,7 @@ jobs:
   
   call-reusable-workflow-in-another-repo:
     if: ${{ github.event_name == 'push' }}
+    # Below are three different valid ways to call a reusable workflow in another repo (using tag, branch name or a SHA hash commit ref)
     uses: PramodKumarYadav/reusable-workflows/.github/workflows/another-reusable-workflow.yml@v1
     # uses: PramodKumarYadav/reusable-workflows/.github/workflows/another-reusable-workflow.yml@main
     # uses: PramodKumarYadav/reusable-workflows/.github/workflows/another-reusable-workflow.yml@3319ec2a5603399b680f7836574a30d946ace878
