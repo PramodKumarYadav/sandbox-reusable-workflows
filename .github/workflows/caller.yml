@@ -53,7 +53,7 @@ jobs:
   
   call-reusable-workflow-in-another-repo:
     if: ${{ github.event_name == 'push' }}
-    uses: PramodKumarYadav/reusable-workflows/.github/workflows/another-reusable-workflow.yml@v1
+    uses: PramodKumarYadav/reusable-workflows/.github/workflows/another-reusable-workflow.yml@3319ec2a5603399b680f7836574a30d946ace878
     with:
       config-path: .github/labeler.yml
     secrets:
